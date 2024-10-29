@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7B4B6708-0504-40CE-90F0-D2D6870E24EC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="servidor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\ACBr-Full\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\serverpdv\server.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="servidor">
+        <MSBuild Projects="servidor.dproj"/>
+    </Target>
+    <Target Name="servidor:Clean">
+        <MSBuild Projects="servidor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="servidor:Make">
+        <MSBuild Projects="servidor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ACBrNFe_Exemplo">
+        <MSBuild Projects="..\..\ACBr-Full\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj"/>
+    </Target>
+    <Target Name="ACBrNFe_Exemplo:Clean">
+        <MSBuild Projects="..\..\ACBr-Full\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ACBrNFe_Exemplo:Make">
+        <MSBuild Projects="..\..\ACBr-Full\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="server">
+        <MSBuild Projects="..\..\serverpdv\server.dproj"/>
+    </Target>
+    <Target Name="server:Clean">
+        <MSBuild Projects="..\..\serverpdv\server.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="server:Make">
+        <MSBuild Projects="..\..\serverpdv\server.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="servidor;ACBrNFe_Exemplo;server"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="servidor:Clean;ACBrNFe_Exemplo:Clean;server:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="servidor:Make;ACBrNFe_Exemplo:Make;server:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
