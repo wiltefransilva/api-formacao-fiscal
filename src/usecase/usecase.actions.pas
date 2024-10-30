@@ -78,6 +78,22 @@ begin
     var Ok: Boolean;
     Emit.CRT := StrToCRT(Ok, IntToStr(FFactory.Emitente.CRT.ToInteger + 1));
 
+    Dest.CNPJCPF           := FFactory.Destinatario.CNPJCPF;
+    Dest.IE                := FFactory.Destinatario.IE;
+    Dest.ISUF              := FFactory.Destinatario.ISUF;
+    Dest.xNome             := FFactory.Destinatario.xNome;
+    Dest.EnderDest.Fone    := FFactory.Destinatario.Fone;
+    Dest.EnderDest.CEP     := FFactory.Destinatario.CEP;
+    Dest.EnderDest.xLgr    := FFactory.Destinatario.xLgr;
+    Dest.EnderDest.nro     := FFactory.Destinatario.nro;
+    Dest.EnderDest.xCpl    := FFactory.Destinatario.xCpl;
+    Dest.EnderDest.xBairro := FFactory.Destinatario.xBairro;
+    Dest.EnderDest.cMun    := FFactory.Destinatario.cMun;
+    Dest.EnderDest.xMun    := FFactory.Destinatario.xMun;
+    Dest.EnderDest.UF      := FFactory.Destinatario.UF;
+    Dest.EnderDest.cPais   := FFactory.Destinatario.cPais;
+    Dest.EnderDest.xPais   := FFactory.Destinatario.xPais;
+
     Retirada.CNPJCPF := '';
     Retirada.xLgr := '';
     Retirada.nro := '';

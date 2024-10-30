@@ -191,11 +191,46 @@ type
     function CRT: String; overload;
   end;
 
+  IDestinatario = interface
+    ['{49EDC0A5-9EA7-4901-A23D-72B289056B1E}']
+    function CNPJCPF: string; overload;
+    function CNPJCPF( AValue: string ): IDestinatario; overload;
+    function IE: string; overload;
+    function IE( AValue: string ): IDestinatario; overload;
+    function ISUF: string; overload;
+    function ISUF( AValue: string ): IDestinatario; overload;
+    function xNome: string; overload;
+    function xNome( AValue: string ): IDestinatario; overload;
+    function Fone: string; overload;
+    function Fone( AValue: string ): IDestinatario; overload;
+    function CEP: Integer; overload;
+    function CEP( AValue: Integer ): IDestinatario; overload;
+    function xLgr: string; overload;
+    function xLgr( AValue: string ): IDestinatario; overload;
+    function nro: string; overload;
+    function nro( AValue: string ): IDestinatario; overload;
+    function xCpl: string; overload;
+    function xCpl( AValue: string ): IDestinatario; overload;
+    function xBairro: string; overload;
+    function xBairro( AValue: string ): IDestinatario; overload;
+    function cMun: Integer; overload;
+    function cMun( AValue: Integer ): IDestinatario; overload;
+    function xMun: string; overload;
+    function xMun( AValue: string ): IDestinatario; overload;
+    function UF: string; overload;
+    function UF( AValue: string ): IDestinatario; overload;
+    function cPais: Integer; overload;
+    function cPais( AValue: Integer ): IDestinatario; overload;
+    function xPais: string; overload;
+    function xPais( AValue: string ): IDestinatario; overload;
+  end;
+
   IFactoryModels = interface
     ['{F3C739F2-CF54-445E-9B6B-4CD19CA5A28B}']
     function Configuracoes: IConfiguracoes;
     function Ide: IIde;
     function Emitente: IEmitente;
+    function Destinatario: IDestinatario;
   end;
 
 implementation
